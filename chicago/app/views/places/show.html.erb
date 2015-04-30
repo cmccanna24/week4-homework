@@ -37,7 +37,6 @@
 <h3 style="clear:both; margin-top: 100px">Reviews</h3>
 
 <p>Write a review</p>
-<!-- <form action="/reviews/<%= @place.id %>/submit_new"> -->
 <%= form_tag "/reviews" do %>
   <select name="rating">
     <option>5 star</option>
@@ -50,7 +49,6 @@
   <input type="hidden" name="place_id" value="<%= @place.id %>">
   <button>Submit</button>
 <% end %>
-<!-- </form> -->
 
 <% Review.where(place_id: @place.id).order('id desc').each do |review| %>
   <p>
